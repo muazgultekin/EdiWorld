@@ -1,0 +1,129 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{E9C4C77B-9012-4E08-959F-F7681599C466}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>EdiFileProcess</RootNamespace>
+    <AssemblyName>EdiFileProcess</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <Deterministic>true</Deterministic>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Attributes\EdiAttribute.cs" />
+    <Compile Include="Attributes\EdiSegmentAttribute.cs" />
+    <Compile Include="Attributes\EdiValueAttribute.cs" />
+    <Compile Include="EdiDeserialize.cs" />
+    <Compile Include="EdiSerializer.cs" />
+    <Compile Include="EdiWriteObject.cs" />
+    <Compile Include="Enums\EdiTypes.cs" />
+    <Compile Include="Enums\PictureKind.cs" />
+    <Compile Include="Models\Edi204Model.cs" />
+    <Compile Include="Models\Edi204\MarksAndNumber.cs" />
+    <Compile Include="Models\Edi204\MotorCarrierLoadTender.cs" />
+    <Compile Include="Models\Edi204\OrderIdentificationDetail.cs" />
+    <Compile Include="Models\Edi204\StopOffDetails.cs" />
+    <Compile Include="Models\Edi210Model.cs" />
+    <Compile Include="Models\Edi210\AssignedNumber.cs" />
+    <Compile Include="Models\Edi210\Equipment.cs" />
+    <Compile Include="Models\Edi210\MotorCarrierFreight.cs" />
+    <Compile Include="Models\Edi210\MotorCarrierFreightInvoice.cs" />
+    <Compile Include="Models\Edi214Model.cs" />
+    <Compile Include="Models\Edi214\AssignedNumber.cs" />
+    <Compile Include="Models\Edi214\CartonPackage.cs" />
+    <Compile Include="Models\Edi214\ShipmentStatusDetail.cs" />
+    <Compile Include="Models\Edi214\ShipmentStatusMessage.cs" />
+    <Compile Include="Models\Edi850\Order.cs" />
+    <Compile Include="Models\Edi850\OrderDetail.cs" />
+    <Compile Include="Models\Edi850\PurchaseOrder.cs" />
+    <Compile Include="Models\Edi856Model.cs" />
+    <Compile Include="Models\Edi990Model.cs" />
+    <Compile Include="Models\Edi990\ResponseToLoadTender.cs" />
+    <Compile Include="Models\Edi990\StopOffDetail.cs" />
+    <Compile Include="Models\SegmentGroups\Equipment.cs" />
+    <Compile Include="Models\SegmentGroups\N1Date.cs" />
+    <Compile Include="Models\SegmentGroups\NN.cs" />
+    <Compile Include="Models\SegmentGroups\REF.cs" />
+    <Compile Include="Models\Segments\AT7Segment.cs" />
+    <Compile Include="Models\Segments\AT8Segment.cs" />
+    <Compile Include="Models\Segments\B10Segment.cs" />
+    <Compile Include="Models\Segments\B1Segment.cs" />
+    <Compile Include="Models\Segments\B2ASegment.cs" />
+    <Compile Include="Models\Segments\B2Segment.cs" />
+    <Compile Include="Models\Segments\B3Segment.cs" />
+    <Compile Include="Models\Segments\BEGSegment.cs" />
+    <Compile Include="Models\Segments\CD3Segment.cs" />
+    <Compile Include="Models\Segments\CTTSegment.cs" />
+    <Compile Include="Models\Segments\CURSegment.cs" />
+    <Compile Include="Models\Segments\DTMSegment.cs" />
+    <Compile Include="Models\Segments\FOBSegment.cs" />
+    <Compile Include="Models\Segments\G61Segment.cs" />
+    <Compile Include="Models\Segments\G62Segment.cs" />
+    <Compile Include="Models\Segments\GESegment.cs" />
+    <Compile Include="Models\Segments\GSSegment.cs" />
+    <Compile Include="Models\Segments\IEASegment.cs" />
+    <Compile Include="Models\Segments\ISASegment.cs" />
+    <Compile Include="Models\Segments\L11Segment.cs" />
+    <Compile Include="Models\Segments\L1Segment.cs" />
+    <Compile Include="Models\Segments\L3Segment.cs" />
+    <Compile Include="Models\Segments\L5Segment.cs" />
+    <Compile Include="Models\Segments\LXSegment.cs" />
+    <Compile Include="Models\Segments\MS3Segment.cs" />
+    <Compile Include="Models\Segments\N1Segment.cs" />
+    <Compile Include="Models\Segments\N2Segment.cs" />
+    <Compile Include="Models\Segments\N3Segment.cs" />
+    <Compile Include="Models\Segments\N4Segment.cs" />
+    <Compile Include="Models\Segments\N7Segment.cs" />
+    <Compile Include="Models\Segments\N9Segment.cs" />
+    <Compile Include="Models\Segments\OIDSegment.cs" />
+    <Compile Include="Models\Segments\PERSegment.cs" />
+    <Compile Include="Models\Segments\PIDSegment.cs" />
+    <Compile Include="Models\Segments\PO1Segment.cs" />
+    <Compile Include="Models\Segments\PO4Segment.cs" />
+    <Compile Include="Models\Segments\Q7Segment.cs" />
+    <Compile Include="Models\Segments\R3Segment.cs" />
+    <Compile Include="Models\Segments\REFSegment.cs" />
+    <Compile Include="Models\Segments\S5Segment.cs" />
+    <Compile Include="Models\Segments\SESegment.cs" />
+    <Compile Include="Models\Segments\STSegment.cs" />
+    <Compile Include="Models\Segments\TD1Segment.cs" />
+    <Compile Include="Models\Segments\TD3Segment.cs" />
+    <Compile Include="Models\Segments\TD5Segment.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Structs\Picture.cs" />
+    <Compile Include="Utilities\EdiExtensions.cs" />
+    <Compile Include="Utilities\PropertyInfoClass.cs" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>
