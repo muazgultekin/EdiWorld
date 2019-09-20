@@ -9,6 +9,7 @@ namespace EdiFileProcess.UnitTest
         [TestMethod]
         public void TestE990()
         {
+
         }
     }
 }

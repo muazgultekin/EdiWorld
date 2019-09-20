@@ -1,7 +1,7 @@
-# EdiWorld
+#	EdiWorld
 Serializing and deserializing operation for any types of edi proccess 
 
-# EdiFileProccess Beta
+##	EdiFileProccess Beta
 
 An EDI file is a data file formatted using one of several Electronic Data Interchange (EDI) standards. It contains structured data stored in a plain text format and is used for transferring business data between multiple organizations. EDI files are designed to reduce errors, cost, and processing time associated with postal mail, email, and faxes.
 EDI files may be saved in various standards. Several common EDI formats are listed below:
@@ -18,7 +18,7 @@ There are more than 300 edi file types.
 The advantages for those working in the transport industry is that regular high-volume communications can be automated allowing dispatchers and accounts receivables staff more time to concentrate on more productive/profitable tasks and supply clients with much better customer care. One of the major benefits of EDI is that it gets rid of a dispatcher from having to by hand crucial information into the dispatch functional and billing system. This leads to saving money and time while getting rid of any pricey data entry mistakes. The other benefit is that transportation companies who are EDI certified can interact seamlessly and digitally with all celebrations in the supply chain process.
  
 
-EDIFACT
+##	EDIFACT
 
 EDIFACT stands for Electronic Data Interchange For Administration, Commerce, and Transport. The United Nations developed the EDIFACT. It finds use in multi-country/multi-industry trading purposes and in an overall global context. The companies in Europe have been using EDIFACT for a very long time. Hence, the EDIFACT finds broad use in the European parts. UNEDIFACT is another term that refers to EDIFACT.
 VDA
@@ -40,7 +40,8 @@ TRADACOMS
 The TRADACOMs EDI Standard finds use in the domestic trading in the UK. The first version came about in 1982, and this EDI standard has some similarities with that of EDIFACT. In 1995, development of Tradacoms came to a halt. Yet the retail industry uses it even today.
 The types of EDI mentioned above are the main ones profoundly used by most of the business industries around the world. There are other EDI standards too such as SWIFT, VICS, etc.  
 
-EDI FILE PROCCESS SOLUTION (BETA)
+##	EDI FILE PROCCESS SOLUTION (BETA)
+
 In this project we developed an EDI framework. This framework will be supporting any type of EDI files. In this version this framework support ANSI X12 Edi format. In the coming version EDIFACT support will be added.
 This framework is based on TAGs of Edi files. If you create you model correctly EdiFileProccess framework can serialize and deserialize the files easily.
 Sample of EDI 990 Models
