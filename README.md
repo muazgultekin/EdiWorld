@@ -44,6 +44,8 @@ EDI FILE PROCCESS SOLUTION (BETA)
 In this project we developed an EDI framework. This framework will be supporting any type of EDI files. In this version this framework support ANSI X12 Edi format. In the coming version EDIFACT support will be added.
 This framework is based on TAGs of Edi files. If you create you model correctly EdiFileProccess framework can serialize and deserialize the files easily.
 Sample of EDI 990 Models
+
+```csharp
 [Edi(EdiType = EdiTypes.Edi990)]
 public class Edi990Model
 {
@@ -62,6 +64,7 @@ public class Edi990Model
    [EdiSegment(Order = 4)]
    public IEASegment IEA { get; set; }
 }
+```
 After the 990 model is created, serializing and deserialize operation is handled easily.
 
 
