@@ -15,7 +15,7 @@ EDI files may be saved in various standards. Several common EDI formats are list
 •	EDITRANS (Transportation)
 •	ETIS (Telecommunications)
 There are more than 300 edi file types.
-The advantages for those working in the transport industry is that regular high-volume communications can be automated allowing dispatchers and accounts receivables staff more time to concentrate on more productive/profitable tasks and supply clients with much better customer care. One of the major benefits of EDI is that it gets rid of a dispatcher from having to by hand crucial information into the dispatch functional and billing system. This leads to saving money and time while getting rid of any pricey data entry mistakes. The other benefit is that transportation companies who are EDI certified can interact seamlessly and digitally with all celebrations in the supply chain process.
+he advantages for those working in the transport industry is that regular high-volume communications can be automated allowing dispatchers and accounts receivables staff more time to concentrate on more productive/profitable tasks and supply clients with much better customer care. One of the major benefits of EDI is that it gets rid of a dispatcher from having to by hand crucial information into the dispatch functional and billing system. This leads to saving money and time while getting rid of any pricey data entry mistakes. The other benefit is that transportation companies who are EDI certified can interact seamlessly and digitally with all celebrations in the supply chain process.
  
 
 EDIFACT
@@ -44,6 +44,8 @@ EDI FILE PROCCESS SOLUTION (BETA)
 In this project we developed an EDI framework. This framework will be supporting any type of EDI files. In this version this framework support ANSI X12 Edi format. In the coming version EDIFACT support will be added.
 This framework is based on TAGs of Edi files. If you create you model correctly EdiFileProccess framework can serialize and deserialize the files easily.
 Sample of EDI 990 Models
+
+```csharp
 [Edi(EdiType = EdiTypes.Edi990)]
 public class Edi990Model
 {
@@ -62,6 +64,8 @@ public class Edi990Model
    [EdiSegment(Order = 4)]
    public IEASegment IEA { get; set; }
 }
+```
+
 After the 990 model is created, serializing and deserialize operation is handled easily.
 
 
