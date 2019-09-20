@@ -30,7 +30,7 @@ namespace EdiFileProcess.Models.Segments
         [EdiValue("X(2)", Order = 6, Description = "Qualifier to designate the system/method of code structure used to designate the sender or receiver ID element being qualified.")]
         public string ReceiverIDQualifier { get; set; }
 
-        [EdiValue("X(15)", Order = 7, IsTrim = false, Description = "Identification code published by the receiver of the data; When sending, it is used by the sender as their sending ID, thus other parties sending to them will use this as a receiving ID to route data to them.")]
+        [EdiValue("X(15)", Order = 7, IsTrim = true, Description = "Identification code published by the receiver of the data; When sending, it is used by the sender as their sending ID, thus other parties sending to them will use this as a receiving ID to route data to them.")]
         public string ReceiverID { get; set; }
 
         [EdiValue("9(6)", Order = 8, Format = "yyMMdd", Description = "Date of the interchange.")]

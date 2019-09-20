@@ -293,7 +293,9 @@ namespace EdiFileProcess
 
         private object DeserializeEdi990(string[] ReadToEndLines, Type objectType)
         {
+            
             #region Edi Validation
+            /*
             if (ReadToEndLines.Length < 4)
                 throw new Exception("Edi hatalı!");
 
@@ -316,7 +318,7 @@ namespace EdiFileProcess
             string[] IEALineParts = IEALine.Split('*');
             if (IEALineParts[0] != "IEA")
                 throw new Exception("Edi dosyası IEA ile bitmelidir!");
-
+            */
 
             object dataObject = Activator.CreateInstance(objectType);
             Type dataObjectType = dataObject.GetType();
