@@ -1,4 +1,5 @@
 ﻿using EdiFileProcess.Models;
+using EdiFileProcess.Models.Edi990;
 using EdiFileProcess.UnitTest.E990;
 using EdiFileProcess.UnitTest.MainClasses;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
@@ -14,7 +15,10 @@ namespace EdiFileProcess.UnitTest
             Edi990Model serializer = new Edi990Model
             {
                 ISA = ISAClass.Get(),
-                GS = GSClass.Get()
+                GS = GSClass.Get(),
+                ResponseToLoadTenders = ResponseToLoadTendersClass.Get(),
+                GE = GEClass.Get(),
+                IEA = IEAClass.Get()
             };
 
             E990Class e990Class = new E990Class();
@@ -48,6 +52,18 @@ namespace EdiFileProcess.UnitTest
             Assert.AreEqual(serializer.GS.GroupControlNumber, deserializer.GS.GroupControlNumber);
             Assert.AreEqual(serializer.GS.ResponsibleAgencyCode, deserializer.GS.ResponsibleAgencyCode);
             Assert.AreEqual(serializer.GS.VersionReleaseIndustryIdentifierCode, deserializer.GS.VersionReleaseIndustryIdentifierCode);
+           
+
+            // GEC test complited
+            Assert.AreEqual(serializer.GE.NumberOfTransactionsSetsIncluded, deserializer.GE.NumberOfTransactionsSetsIncluded);
+            Assert.AreEqual(serializer.GE.NumberGroupControlNumber, deserializer.GE.NumberGroupControlNumber);
+
+            // IEA test complited
+            Assert.AreEqual(serializer.IEA.NumberOfIncludedFunctionalGroups, deserializer.IEA.NumberOfIncludedFunctionalGroups);
+            Assert.AreEqual(serializer.IEA.QuantityInterchangeControlNumber, deserializer.IEA.QuantityInterchangeControlNumber);
+
+
+
         }
     }
 }

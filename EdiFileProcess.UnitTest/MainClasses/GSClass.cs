@@ -8,7 +8,7 @@ namespace EdiFileProcess.UnitTest.MainClasses
         public static GSSegment Get()
         {
             //*****1730*3*X*004010~
-            GSSegment gSSegment = new GSSegment
+            return new GSSegment
             {
                 FunctionalIdentifierCode = "GF",
                 ApplicationSenderCode = "UFLB",
@@ -17,8 +17,7 @@ namespace EdiFileProcess.UnitTest.MainClasses
                 GroupControlNumber = "3",
                 ResponsibleAgencyCode = "X",
                 VersionReleaseIndustryIdentifierCode = "004010"
-            };
-            return gSSegment;
-        }
-    }    
+            };            
+        }        
+    }
 }
