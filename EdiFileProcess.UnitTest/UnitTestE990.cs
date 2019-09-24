@@ -1,7 +1,8 @@
 ﻿using EdiFileProcess.Models;
-using EdiFileProcess.Models.Edi990;
+using EdiFileProcess.Models.Segments;
 using EdiFileProcess.UnitTest.E990;
 using EdiFileProcess.UnitTest.MainClasses;
+using EdiFileProcess.UnitTest.Validations;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 
 namespace EdiFileProcess.UnitTest
@@ -52,7 +53,56 @@ namespace EdiFileProcess.UnitTest
             Assert.AreEqual(serializer.GS.GroupControlNumber, deserializer.GS.GroupControlNumber);
             Assert.AreEqual(serializer.GS.ResponsibleAgencyCode, deserializer.GS.ResponsibleAgencyCode);
             Assert.AreEqual(serializer.GS.VersionReleaseIndustryIdentifierCode, deserializer.GS.VersionReleaseIndustryIdentifierCode);
-           
+
+            // ResponseToLoadTender test complited
+            Assert.AreEqual(serializer.ResponseToLoadTenders.Count, deserializer.ResponseToLoadTenders.Count);
+
+            for (int i = 0; i < serializer.ResponseToLoadTenders.Count; i++)
+            {
+                // ST test complited
+                Assert.AreEqual(serializer.ResponseToLoadTenders[i].ST.TransactionSetControlNumber, deserializer.ResponseToLoadTenders[i].ST.TransactionSetControlNumber);
+                Assert.AreEqual(serializer.ResponseToLoadTenders[i].ST.TransactionSetIdentifierCode, deserializer.ResponseToLoadTenders[i].ST.TransactionSetIdentifierCode);
+
+                // B1 test complited
+                Assert.AreEqual(serializer.ResponseToLoadTenders[i].B1.Date, deserializer.ResponseToLoadTenders[i].B1.Date);
+                Assert.AreEqual(serializer.ResponseToLoadTenders[i].B1.ReservationActionCode, deserializer.ResponseToLoadTenders[i].B1.ReservationActionCode);
+                Assert.AreEqual(serializer.ResponseToLoadTenders[i].B1.ShipmentIdentificationNumber, deserializer.ResponseToLoadTenders[i].B1.ShipmentIdentificationNumber);
+                Assert.AreEqual(serializer.ResponseToLoadTenders[i].B1.StandardCarrierAlphaCode, deserializer.ResponseToLoadTenders[i].B1.StandardCarrierAlphaCode);
+
+                if (serializer.ResponseToLoadTenders[i].N9 != null)
+                {
+                    N9SegmentValidate.Validate(serializer.ResponseToLoadTenders[i].N9, deserializer.ResponseToLoadTenders[i].N9);
+                }
+
+                if (serializer.ResponseToLoadTenders[i].StopOffDetails != null)
+                {
+                    for (int j = 0; j < serializer.ResponseToLoadTenders[i].StopOffDetails.Count; j++)
+                    {
+                        N9Segment n9Segment = serializer.ResponseToLoadTenders[i].StopOffDetails[j].N9;
+                        if (n9Segment != null)
+                        {
+                            N9SegmentValidate.Validate(serializer.ResponseToLoadTenders[i].StopOffDetails[j].N9, deserializer.ResponseToLoadTenders[i].StopOffDetails[j].N9);
+                        }
+                        S5Segment s5Segment = serializer.ResponseToLoadTenders[i].StopOffDetails[j].S5;
+                        if (s5Segment != null)
+                        {
+
+                        }
+                    }
+                }                
+
+                if (serializer.ResponseToLoadTenders[i].N7 != null)
+                {
+                    Assert.AreEqual(serializer.ResponseToLoadTenders[i].N7.EquipmentInitial, deserializer.ResponseToLoadTenders[i].N7.EquipmentInitial);
+                    Assert.AreEqual(serializer.ResponseToLoadTenders[i].N7.EquipmentNumber, deserializer.ResponseToLoadTenders[i].N7.EquipmentNumber);
+                }
+
+                // SE test complited
+                Assert.AreEqual(serializer.ResponseToLoadTenders[i].SE.NumberOfIncludedSegments, deserializer.ResponseToLoadTenders[i].SE.NumberOfIncludedSegments);
+                Assert.AreEqual(serializer.ResponseToLoadTenders[i].SE.NumberTransactionSetControlNumber, deserializer.ResponseToLoadTenders[i].SE.NumberTransactionSetControlNumber);
+
+            }
+
 
             // GEC test complited
             Assert.AreEqual(serializer.GE.NumberOfTransactionsSetsIncluded, deserializer.GE.NumberOfTransactionsSetsIncluded);
@@ -61,9 +111,6 @@ namespace EdiFileProcess.UnitTest
             // IEA test complited
             Assert.AreEqual(serializer.IEA.NumberOfIncludedFunctionalGroups, deserializer.IEA.NumberOfIncludedFunctionalGroups);
             Assert.AreEqual(serializer.IEA.QuantityInterchangeControlNumber, deserializer.IEA.QuantityInterchangeControlNumber);
-
-
-
         }
     }
 }
