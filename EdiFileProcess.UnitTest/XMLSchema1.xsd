@@ -1,0 +1,28 @@
+﻿<xs:schema attributeFormDefault="unqualified" elementFormDefault="qualified" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:element name="POS">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element name="row">
+          <xs:complexType>
+            <xs:simpleContent>
+              <xs:extension base="xs:string">
+                <xs:attribute type="xs:int" name="MMSI"/>
+                <xs:attribute type="xs:int" name="IMO"/>
+                <xs:attribute type="xs:int" name="SHIP_ID"/>
+                <xs:attribute type="xs:float" name="LAT"/>
+                <xs:attribute type="xs:float" name="LON"/>
+                <xs:attribute type="xs:byte" name="SPEED"/>
+                <xs:attribute type="xs:byte" name="HEADING"/>
+                <xs:attribute type="xs:byte" name="COURSE"/>
+                <xs:attribute type="xs:byte" name="STATUS"/>
+                <xs:attribute type="xs:dateTime" name="TIMESTAMP"/>
+                <xs:attribute type="xs:string" name="DSRC"/>
+                <xs:attribute type="xs:byte" name="UTC_SECONDS"/>
+              </xs:extension>
+            </xs:simpleContent>
+          </xs:complexType>
+        </xs:element>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

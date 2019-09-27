@@ -86,7 +86,7 @@ namespace EdiFileProcess.UnitTest
                         S5Segment s5Segment = serializer.ResponseToLoadTenders[i].StopOffDetails[j].S5;
                         if (s5Segment != null)
                         {
-
+                            S5SegmentValidate.Validate(s5Segment, deserializer.ResponseToLoadTenders[i].StopOffDetails[j].S5);
                         }
                     }
                 }                

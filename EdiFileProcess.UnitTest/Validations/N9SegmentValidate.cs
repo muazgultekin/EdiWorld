@@ -11,9 +11,4 @@ namespace EdiFileProcess.UnitTest.Validations
             Assert.AreEqual(N9Serializer.ReferenceIdentificationQualifier, N9Deserializer.ReferenceIdentificationQualifier);            
         }
     }
-
-    public class STSegmentValidate
-    {
-
-    }
 }

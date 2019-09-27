@@ -59,6 +59,8 @@
     <Compile Include="Validations\N9SegmentValidate.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="UnitTestE990.cs" />
+    <Compile Include="Validations\S5SegmentValidate.cs" />
+    <Compile Include="Validations\STSegmentValidate.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\EdiFileProcess.csproj">
