@@ -9,5 +9,6 @@ namespace EdiFileProcess.Attributes
         public int Order { get; set; }
         public bool IsCollection { get; set; }
         public string SequenceEnd { get; set; }
+        public bool IsWithSequenceEnd { get; set; }
     }
 }

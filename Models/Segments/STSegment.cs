@@ -8,10 +8,10 @@ namespace EdiFileProcess.Models.Segments
     [EdiSegment(Path = "ST")]
     public class STSegment
     {        
-        [EdiValue("X(3)", Order = 0, Description = "Code uniquely identifying a Transaction Set.")]
+        [EdiValue("X(3)", Order = 0, Path = "ST", Description = "Code uniquely identifying a Transaction Set.")]
         public string TransactionSetIdentifierCode { get; set; }
 
-        [EdiValue("X(4)", Order = 1, Description = "Identifying control number that must be unique within the transaction set functional group assigned by the originator for a transaction set.")]
+        [EdiValue("X(4)", Order = 1, Path = "ST", Description = "Identifying control number that must be unique within the transaction set functional group assigned by the originator for a transaction set.")]
         public string TransactionSetControlNumber  { get; set; }
     }
 }

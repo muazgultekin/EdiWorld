@@ -44,6 +44,7 @@
     <Compile Include="Attributes\EdiAttribute.cs" />
     <Compile Include="Attributes\EdiSegmentAttribute.cs" />
     <Compile Include="Attributes\EdiValueAttribute.cs" />
+    <Compile Include="Edi850Deserialize.cs" />
     <Compile Include="EdiDeserialize.cs" />
     <Compile Include="EdiSerializer.cs" />
     <Compile Include="EdiWriteObject.cs" />
@@ -67,10 +68,11 @@
     <Compile Include="Models\Edi850\Order.cs" />
     <Compile Include="Models\Edi850\OrderDetail.cs" />
     <Compile Include="Models\Edi850\PurchaseOrder.cs" />
-    <Compile Include="Models\Edi856Model.cs" />
+    <Compile Include="Models\Edi850Model.cs" />
     <Compile Include="Models\Edi990Model.cs" />
     <Compile Include="Models\Edi990\ResponseToLoadTender.cs" />
     <Compile Include="Models\Edi990\StopOffDetail.cs" />
+    <Compile Include="Models\EdiModelBase.cs" />
     <Compile Include="Models\SegmentGroups\Equipment.cs" />
     <Compile Include="Models\SegmentGroups\N1Date.cs" />
     <Compile Include="Models\SegmentGroups\NN.cs" />
@@ -123,6 +125,7 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Structs\Picture.cs" />
     <Compile Include="Utilities\EdiExtensions.cs" />
+    <Compile Include="Utilities\PropertyClass.cs" />
     <Compile Include="Utilities\PropertyInfoClass.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

@@ -3,7 +3,7 @@
 namespace EdiFileProcess.Models.Segments
 {
     /// <summary>
-    /// Transaction Totals
+    /// Transaction Totals 
     /// </summary>
     [EdiSegment(Path = "CTT")]
     public class CTTSegment
@@ -11,7 +11,7 @@ namespace EdiFileProcess.Models.Segments
         /// <summary>
         /// Transaction Totals
         /// </summary>
-        [EdiValue("X(6)", Order = 0, Description = "")]
+        [EdiValue("X(6)", Order = 0, Path = "CTT", Description = "")]
         public string NumberOfLineItems { get; set; }
     }
 }

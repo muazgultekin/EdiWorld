@@ -15,10 +15,10 @@ namespace EdiFileProcess.Models.Edi990
         [EdiSegment(Order = 1)]
         public B1Segment B1 { get; set; }
 
-        [EdiSegment(Order = 2)]
+        [EdiSegment(Order = 2, Path = "S5")]
         public N9Segment N9 { get; set; }
 
-        [EdiSegment(Order = 3)]
+        [EdiSegment(Order = 3, Path = "S5")]
         public N7Segment N7 { get; set; }
 
         [EdiSegment(Path = "S5", Order = 4, IsCollection = true)]

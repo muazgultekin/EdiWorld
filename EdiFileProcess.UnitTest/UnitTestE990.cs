@@ -4,6 +4,7 @@ using EdiFileProcess.UnitTest.E990;
 using EdiFileProcess.UnitTest.MainClasses;
 using EdiFileProcess.UnitTest.Validations;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
+using System.IO;
 
 namespace EdiFileProcess.UnitTest
 {
@@ -111,6 +112,15 @@ namespace EdiFileProcess.UnitTest
             // IEA test complited
             Assert.AreEqual(serializer.IEA.NumberOfIncludedFunctionalGroups, deserializer.IEA.NumberOfIncludedFunctionalGroups);
             Assert.AreEqual(serializer.IEA.QuantityInterchangeControlNumber, deserializer.IEA.QuantityInterchangeControlNumber);
+        }
+
+        [TestMethod]
+        public void TestE990FromFile() {            
+            Edi990Model edi850Model = default(Edi990Model);
+            using (Stream reader = File.OpenRead("990sample.txt"))            
+            {
+                edi850Model = new EdiDeserialize().Deserialize<Edi990Model>(new StreamReader(reader));
+            }
         }
     }
 }

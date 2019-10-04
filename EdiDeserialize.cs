@@ -1,35 +1,4 @@
-﻿/*EdiSegmentAttribute eEdiSegmentAttribute = (EdiSegmentAttribute)propertyInfo.GetCustomAttribute(typeof(EdiSegmentAttribute));
-Type GenericArgument = propertyInfo.PropertyType.GetGenericArguments()[0];                    
-List<string> readToEndLineTemp = new List<string>();
-bool IsAdd = false;
-foreach (string readToEndLine in ReadToEndLines)
-{
-    string[] parts = readToEndLine.Split('*');
-    string master = parts[0];
-    if (!IsAdd)
-    {
-        if (master == eEdiSegmentAttribute.Path)
-        {
-            readToEndLineTemp.Add(readToEndLine);
-            IsAdd = !IsAdd;
-        }
-    }            
-    else
-    {
-        if ((master != eEdiSegmentAttribute.Path) && (master != eEdiSegmentAttribute.SequenceEnd))
-        {
-            readToEndLineTemp.Add(readToEndLine);                                
-        }
-        else
-        {
-            object dataObjectReturn = DeserializeInternal(readToEndLineTemp.ToArray(), GenericArgument);
-            propertyInfo.SetValue(GenericArgument, dataObjectReturn);
-            IsAdd = !IsAdd;
-        }
-    }
-}    */
-
-using EdiFileProcess.Attributes;
+﻿using EdiFileProcess.Attributes;
 using System;
 using System.Collections;
 using System.Collections.Generic;
@@ -51,7 +20,7 @@ namespace EdiFileProcess
             string ReadToEnd = reader.ReadToEnd();
             string[] ReadToEndLines = ReadToEnd.Replace("\r", string.Empty).Replace("\n", string.Empty).Split('~');
             ReadToEndLines = ReadToEndLines.Where(w => w != string.Empty).ToArray();
-            EdiAttribute ediAttribute = (EdiAttribute)objectType.GetCustomAttribute<EdiAttribute>();
+            EdiAttribute ediAttribute = objectType.GetCustomAttribute<EdiAttribute>();
             if (ediAttribute == null)
                 throw new Exception("Deserialize edilecek obje Modeli hangi Edi dosyası için işlem tyapılacağı tanımlanmamış!");
             switch (ediAttribute.EdiType)
@@ -59,12 +28,12 @@ namespace EdiFileProcess
                 case Enums.EdiTypes.Edi210:
                 case Enums.EdiTypes.Edi214:
                 case Enums.EdiTypes.Edi850:
-                    return DeserializeInternal(ReadToEndLines, objectType);
+                    return Edi850Deserialize.DeserializeInternal(ReadToEndLines, objectType);
                 case Enums.EdiTypes.Edi856:
                 case Enums.EdiTypes.Edi856WithEquipment:
                     return DeserializeInternal856(ReadToEndLines, objectType);
                 case Enums.EdiTypes.Edi990:
-                    return DeserializeEdi990(ReadToEndLines, objectType);
+                    return Edi850Deserialize.DeserializeInternal(ReadToEndLines, objectType);
                 default:
                     return DeserializeInternal(ReadToEndLines, objectType);
             }

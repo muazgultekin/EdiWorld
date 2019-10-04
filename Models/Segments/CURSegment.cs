@@ -3,12 +3,12 @@
 namespace EdiFileProcess.Models.Segments
 {
     [EdiSegment(Path = "CUR")]
-    public class CURSegment
+    public class CURSegment 
     {
-        [EdiValue(Order = 0)]
+        [EdiValue(Order = 0, Path = "CUR", Description ="")]
         public string EntityIdentifierCode { get; set; }
 
-        [EdiValue(Order = 1)]
+        [EdiValue(Order = 1, Path = "CUR", Description = "")]
         public string CurrencyCode { get; set; }
     }
 }
