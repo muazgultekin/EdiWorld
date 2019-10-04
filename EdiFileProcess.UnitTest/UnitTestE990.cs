@@ -121,6 +121,15 @@ namespace EdiFileProcess.UnitTest
             {
                 edi850Model = new EdiDeserialize().Deserialize<Edi990Model>(new StreamReader(reader));
             }
+
+            Assert.AreEqual(edi850Model.ResponseToLoadTenders.Count, 1);
+            Assert.AreEqual(edi850Model.ResponseToLoadTenders[0].N9.ReferenceIdentificationQualifier, "CN");
+            Assert.AreEqual(edi850Model.ResponseToLoadTenders[0].N9.ReferenceIdentification, "5591245458");
+
+            Assert.AreEqual(edi850Model.ResponseToLoadTenders[0].B1.StandardCarrierAlphaCode, "UFLB");
+            Assert.AreEqual(edi850Model.ResponseToLoadTenders[0].B1.ShipmentIdentificationNumber, "43919999");
+            Assert.AreEqual(edi850Model.ResponseToLoadTenders[0].B1.Date, new System.DateTime(2019, 04, 18).Date);
+            Assert.AreEqual(edi850Model.ResponseToLoadTenders[0].B1.ReservationActionCode, "A");                   
         }
     }
 }

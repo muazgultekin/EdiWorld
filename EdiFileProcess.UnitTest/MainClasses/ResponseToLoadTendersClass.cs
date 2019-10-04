@@ -15,7 +15,7 @@ namespace EdiFileProcess.UnitTest.MainClasses
                 ST = GetST(),
                 B1 = GetB1(),
                 N9 = GetN9(),
-                SE = GetSE()
+                SE = GetSE()                
             });
             return responseToLoadTenders;
         }        
