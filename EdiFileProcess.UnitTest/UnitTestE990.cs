@@ -138,7 +138,7 @@ namespace EdiFileProcess.UnitTest
             using (Stream reader = File.OpenRead("850sample.txt")) {
                 edi850Model = new EdiDeserialize().Deserialize<Edi850Model>(new StreamReader(reader));
             }
-
+            Assert.AreEqual(edi850Model.PurchaseOrders[0].Orders[0].OrderDetails[0].DTMs.Count, 2);
             /*Assert.AreEqual(edi850Model.ResponseToLoadTenders.Count, 1);
             Assert.AreEqual(edi850Model.ResponseToLoadTenders[0].N9.ReferenceIdentificationQualifier, "CN");
             Assert.AreEqual(edi850Model.ResponseToLoadTenders[0].N9.ReferenceIdentification, "5591245458");
