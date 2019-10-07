@@ -1,7 +1,6 @@
 ﻿using EdiFileProcess.Attributes;
 using EdiFileProcess.Models.Segments;
 
-
 namespace EdiFileProcess.Models.SegmentGroups
 {
     public class REF

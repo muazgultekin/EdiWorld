@@ -116,20 +116,37 @@ namespace EdiFileProcess.UnitTest
 
         [TestMethod]
         public void TestE990FromFile() {            
-            Edi990Model edi850Model = default(Edi990Model);
+            Edi990Model edi990Model = default(Edi990Model);
             using (Stream reader = File.OpenRead("990sample.txt"))            
             {
-                edi850Model = new EdiDeserialize().Deserialize<Edi990Model>(new StreamReader(reader));
+                edi990Model = new EdiDeserialize().Deserialize<Edi990Model>(new StreamReader(reader));
             }
 
-            Assert.AreEqual(edi850Model.ResponseToLoadTenders.Count, 1);
+            Assert.AreEqual(edi990Model.ResponseToLoadTenders.Count, 1);
+            Assert.AreEqual(edi990Model.ResponseToLoadTenders[0].N9.ReferenceIdentificationQualifier, "CN");
+            Assert.AreEqual(edi990Model.ResponseToLoadTenders[0].N9.ReferenceIdentification, "5591245458");
+
+            Assert.AreEqual(edi990Model.ResponseToLoadTenders[0].B1.StandardCarrierAlphaCode, "UFLB");
+            Assert.AreEqual(edi990Model.ResponseToLoadTenders[0].B1.ShipmentIdentificationNumber, "43919999");
+            Assert.AreEqual(edi990Model.ResponseToLoadTenders[0].B1.Date, new System.DateTime(2019, 04, 18).Date);
+            Assert.AreEqual(edi990Model.ResponseToLoadTenders[0].B1.ReservationActionCode, "A");                   
+        }
+
+        [TestMethod]
+        public void TestE850FromFile() {
+            Edi850Model edi850Model = default(Edi850Model);
+            using (Stream reader = File.OpenRead("850sample.txt")) {
+                edi850Model = new EdiDeserialize().Deserialize<Edi850Model>(new StreamReader(reader));
+            }
+
+            /*Assert.AreEqual(edi850Model.ResponseToLoadTenders.Count, 1);
             Assert.AreEqual(edi850Model.ResponseToLoadTenders[0].N9.ReferenceIdentificationQualifier, "CN");
             Assert.AreEqual(edi850Model.ResponseToLoadTenders[0].N9.ReferenceIdentification, "5591245458");
 
             Assert.AreEqual(edi850Model.ResponseToLoadTenders[0].B1.StandardCarrierAlphaCode, "UFLB");
             Assert.AreEqual(edi850Model.ResponseToLoadTenders[0].B1.ShipmentIdentificationNumber, "43919999");
             Assert.AreEqual(edi850Model.ResponseToLoadTenders[0].B1.Date, new System.DateTime(2019, 04, 18).Date);
-            Assert.AreEqual(edi850Model.ResponseToLoadTenders[0].B1.ReservationActionCode, "A");                   
+            Assert.AreEqual(edi850Model.ResponseToLoadTenders[0].B1.ReservationActionCode, "A");*/
         }
     }
 }

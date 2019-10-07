@@ -8,10 +8,10 @@ namespace EdiFileProcess.Models.Segments
     [EdiSegment(Path = "N9")]
     public class N9Segment
     {
-        [EdiValue("X(3)", Order = 0, Path = "N9", Description = "")]
+        [EdiValue("X(3)", Order = 0, Description = "")]
         public string ReferenceIdentificationQualifier { get; set; }
 
-        [EdiValue("X(30)", Order = 1, Path = "N9", Description = "")]
+        [EdiValue("X(30)", Order = 1, Description = "")]
         public string ReferenceIdentification { get; set; }
     }
 }

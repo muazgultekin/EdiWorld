@@ -7,7 +7,7 @@ namespace EdiFileProcess.Models.Segments
     /// REF*BM*1234~
     /// </summary>
     [EdiSegment(Path = "REF")]
-    public class REFSegment 
+    public class REFSegment
     {
         [EdiValue("X(22)", Order = 0, Path = "REF")]
         public string ReferenceNumberQualifier { get; set; }

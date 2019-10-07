@@ -9,16 +9,16 @@ namespace EdiFileProcess.Models.Segments
     [EdiSegment(Path = "TD5")]
     public class TD5Segment
     {
-        [EdiValue("X(1)", Order =0, Path = "TD5")]
+        [EdiValue("X(1)", Order =0)]
         public string RoutingSequenceCode { get; set; }
 
-        [EdiValue("X(2)", Order = 1, Path = "TD5")]
+        [EdiValue("X(2)", Order = 1)]
         public string IDCodeQualifier { get; set; }
 
-        [EdiValue("X(4)", Order = 2, Path = "TD5")]
+        [EdiValue("X(4)", Order = 2)]
         public string IDCode { get; set; }
 
-        [EdiValue("X(2)", Order = 3, Path = "TD5")]
+        [EdiValue("X(2)", Order = 3)]
         public string TransportationMethodMode { get; set; }
     }
 }

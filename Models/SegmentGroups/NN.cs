@@ -2,7 +2,6 @@
 using EdiFileProcess.Models.Segments;
 using System.Collections.Generic;
 
-
 namespace EdiFileProcess.Models.SegmentGroups
 {
     public class NN

@@ -3,12 +3,12 @@
 namespace EdiFileProcess.Models.Segments
 {
     /// <summary>
-    /// Set Purpose 
+    /// Set Purpose
     /// </summary>
     [EdiSegment(Path = "B2A")]
     public class B2ASegment
     {
-        [EdiValue("X(2)", Order = 0, Path = "B2A", Description = "Set Purpose")]
+        [EdiValue("X(2)", Order = 0, Description = "Set Purpose")]
         public string TransactionSetPurposeCode  { get; set; }
     }
 }

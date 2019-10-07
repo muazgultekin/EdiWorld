@@ -2,7 +2,8 @@
 using EdiFileProcess.Models.Segments;
 
 namespace EdiFileProcess.Models {
-    public class EdiModelBase {
+    public class EdiModelBase
+    {
         [EdiSegment(Order = 0)]
         public ISASegment ISA { get; set; }
 
