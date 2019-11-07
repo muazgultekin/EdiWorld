@@ -138,8 +138,5 @@
     <Compile Include="Utilities\PropertyClass.cs" />
     <Compile Include="Utilities\PropertyInfoClass.cs" />
   </ItemGroup>
-  <ItemGroup>
-    <None Include="Documents\997\edi-997-functional-acknowledgment.pdf" />
-  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

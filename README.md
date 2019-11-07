@@ -65,5 +65,5 @@ Edi210 				| 2019-10-01   	| Yes           | Beta            |
 Edi214 				| 2019-10-01   	| Yes           | Beta            |
 Edi850 				| 2019-10-01   	| Yes           | Beta            |
 Edi990 				| 2019-10-01   	| Yes           | Yes             |
-Edi997 				| 2019-11-07   	| Yes           | Yes             |
+Edi997 				| 2019-11-07   	| Yes           | Yes             | [edi-997-functional-acknowledgment](https://www2.rlcarriers.com/files/documents/edi-997-functional-acknowledgment.pdf)
 
