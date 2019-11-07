@@ -60,6 +60,10 @@ After the 990 model is created, serializing and deserialize operation is handled
 
 Supported Models 	| Release Date 	| Serialization | Deserialization | Source document
 ------------------- | ------------- | ------------- | --------------- | ---------------
+Edi204 				| 2019-10-01   	| Yes           | Beta            |
+Edi210 				| 2019-10-01   	| Yes           | Beta            |
+Edi214 				| 2019-10-01   	| Yes           | Beta            |
+Edi850 				| 2019-10-01   	| Yes           | Beta            |
 Edi990 				| 2019-10-01   	| Yes           | Yes             |
 Edi997 				| 2019-11-07   	| Yes           | Yes             |
 
