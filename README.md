@@ -64,6 +64,6 @@ Edi204 				| 2019-10-01   	| Yes           | Beta            |
 Edi210 				| 2019-10-01   	| Yes           | Beta            |
 Edi214 				| 2019-10-01   	| Yes           | Beta            |
 Edi850 				| 2019-10-01   	| Yes           | Beta            |
-Edi990 				| 2019-10-01   	| Yes           | Yes             |
+Edi990 				| 2019-10-01   	| Yes           | Yes             | [carrier_990](https://ryder.com/-/media/ryder/ryder-global/carriers/carrier_990.pdf)
 Edi997 				| 2019-11-07   	| Yes           | Yes             | [edi-997-functional-acknowledgment](https://www2.rlcarriers.com/files/documents/edi-997-functional-acknowledgment.pdf)
 
