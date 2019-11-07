@@ -1,8 +1,7 @@
 ﻿using EdiFileProcess.Attributes;
 using System;
 
-namespace EdiFileProcess.Models.Segments
-{
+namespace EdiFileProcess.Models.Segments {
     /// <summary>
     /// Shipment Status Details
     /// </summary>
@@ -30,4 +29,5 @@ namespace EdiFileProcess.Models.Segments
         [EdiValue("X(2)", Order = 6, Description = "")]
         public string TimeCose { get; set; }
     }
+
 }

@@ -36,5 +36,10 @@
         /// 
         /// </summary>        
         Edi990,
+
+        /// <summary>
+        /// 
+        /// </summary>        
+        Edi997,
     }
 }
