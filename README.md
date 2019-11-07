@@ -58,4 +58,7 @@ public class Edi990Model : EdiModelBase
 
 After the 990 model is created, serializing and deserialize operation is handled easily.
 
+Supported Models 	| Release Date 	| Serialization | Deserialization | Source document
+------------------- | ------------- | ------------- | --------------- | ---------------
+Edi997 				| 2019-11-07   	| Yes           | Yes             | 
 
