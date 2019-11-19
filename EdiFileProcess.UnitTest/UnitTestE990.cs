@@ -1,13 +1,12 @@
-﻿using EdiFileProcess.Models;
-using EdiFileProcess.Models.Segments;
+﻿using EdiFileProcess.Models.X12;
+using EdiFileProcess.Models.X12.Segments;
 using EdiFileProcess.UnitTest.E990;
 using EdiFileProcess.UnitTest.MainClasses;
 using EdiFileProcess.UnitTest.Validations;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using System.IO;
 
-namespace EdiFileProcess.UnitTest
-{
+namespace EdiFileProcess.UnitTest {
     [TestClass]
     public class UnitTestE990
     {

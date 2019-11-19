@@ -1,4 +1,4 @@
-﻿using EdiFileProcess.Models.Segments;
+﻿using EdiFileProcess.Models.X12.Segments;
 
 namespace EdiFileProcess.UnitTest.MainClasses
 {

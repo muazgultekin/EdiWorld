@@ -56,6 +56,7 @@
     <Compile Include="MainClasses\IEAClass.cs" />
     <Compile Include="MainClasses\ISAClass.cs" />
     <Compile Include="MainClasses\ResponseToLoadTendersClass.cs" />
+    <Compile Include="UnitTestDESADV.cs" />
     <Compile Include="Validations\N9SegmentValidate.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="UnitTestE990.cs" />
@@ -69,6 +70,9 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
+    <None Include="DESADV.edi">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>

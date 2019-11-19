@@ -1,5 +1,5 @@
-﻿using EdiFileProcess.Models.Edi990;
-using EdiFileProcess.Models.Segments;
+﻿using EdiFileProcess.Models.X12.Edi990;
+using EdiFileProcess.Models.X12.Segments;
 using System;
 using System.Collections.Generic;
 

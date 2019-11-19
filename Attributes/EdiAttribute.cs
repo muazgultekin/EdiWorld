@@ -1,8 +1,7 @@
 ﻿using EdiFileProcess.Enums;
 using System;
 
-namespace EdiFileProcess.Attributes
-{
+namespace EdiFileProcess.Attributes {
     [AttributeUsage(AttributeTargets.Class| AttributeTargets.Field, Inherited = false, AllowMultiple = false)]
     public sealed class EdiAttribute : Attribute
     {

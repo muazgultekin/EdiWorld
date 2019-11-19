@@ -1,9 +1,8 @@
-﻿using EdiFileProcess.Models;
+﻿using EdiFileProcess.Models.X12;
 using EdiFileProcess.UnitTest.EdiBase;
 using System.IO;
 
-namespace EdiFileProcess.UnitTest.E990
-{
+namespace EdiFileProcess.UnitTest.E990 {
     internal class E990Class : IEdiBase
     {
         public void Serializer(object objectType)
