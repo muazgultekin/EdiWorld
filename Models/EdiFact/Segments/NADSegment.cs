@@ -1,7 +1,7 @@
 ﻿using EdiFileProcess.Attributes;
-using EdiFileProcess.Models.EdiFacts.SegmentGroups;
+using EdiFileProcess.Models.EdiFact.Details;
 
-namespace EdiFileProcess.Models.EdiFacts.Segments {
+namespace EdiFileProcess.Models.EdiFact.Segments {
     /// <summary>
     /// NAME OF ADDRESS
     /// </summary>

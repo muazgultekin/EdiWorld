@@ -1,9 +1,10 @@
 ﻿using EdiFileProcess.Attributes;
-using EdiFileProcess.Models.EdiFacts.SegmentGroups;
-using EdiFileProcess.Models.EdiFacts.Segments;
+using EdiFileProcess.Models.EdiFact.Details;
+using EdiFileProcess.Models.EdiFact.SegmentGroups;
+using EdiFileProcess.Models.EdiFact.Segments;
 using System.Collections.Generic;
 
-namespace EdiFileProcess.Models.EdiFacts.Desadv {
+namespace EdiFileProcess.Models.EdiFact.Desadv {
     public class DespatchAdvice {
         [EdiSegment(Order = 0)]
         public UNHSegment UNH { get; set; }
@@ -18,6 +19,6 @@ namespace EdiFileProcess.Models.EdiFacts.Desadv {
         public List<NADSegment> NADs { get; set; }
 
         [EdiSegment(Order = 4)]
-        public List<CPSSegment> CPSs { get; set; }
+        public List<DetailTriggerSegment> CPSs { get; set; }
     }
 }

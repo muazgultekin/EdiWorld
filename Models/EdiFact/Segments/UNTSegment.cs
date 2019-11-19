@@ -1,6 +1,6 @@
 ﻿using EdiFileProcess.Attributes;
 
-namespace EdiFileProcess.Models.EdiFacts.Segments {
+namespace EdiFileProcess.Models.EdiFact.Segments {
     [EdiSegment(Path = "UNT")]
     public class UNTSegment {
         /// <summary>

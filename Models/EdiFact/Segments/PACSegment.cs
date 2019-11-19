@@ -1,6 +1,6 @@
 ﻿using EdiFileProcess.Attributes;
 
-namespace EdiFileProcess.Models.EdiFacts.Segments {
+namespace EdiFileProcess.Models.EdiFact.Segments {
     [EdiSegment(Path = "PAC")]
     public class PACSegment {
         [EdiValue("9(2)", Order = 0)]

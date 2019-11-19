@@ -1,6 +1,6 @@
 ﻿using EdiFileProcess.Attributes;
 
-namespace EdiFileProcess.Models.EdiFacts.Segments {
+namespace EdiFileProcess.Models.EdiFact.Segments {
     [EdiSegment(Path = "CPS")]
     public class CPSSegment {
         /// <summary>

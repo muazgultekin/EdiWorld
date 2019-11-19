@@ -1,6 +1,6 @@
 ﻿using EdiFileProcess.Attributes;
 
-namespace EdiFileProcess.Models.EdiFacts.Segments {
+namespace EdiFileProcess.Models.EdiFact.Segments {
     /// <summary>
     /// INTERCHANGE TRAILER 
     /// </summary>

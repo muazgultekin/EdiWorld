@@ -1,7 +1,7 @@
 ﻿using EdiFileProcess.Attributes;
 using System;
 
-namespace EdiFileProcess.Models.EdiFacts.SegmentGroups {
+namespace EdiFileProcess.Models.EdiFact.Details {
     public class DateTimePeriodDetail {
         [EdiValue("X(20)", Order = 0)]
         public string DateTimePeriodQualifier { get; set; }

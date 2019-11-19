@@ -1,7 +1,7 @@
 ﻿using EdiFileProcess.Attributes;
 using System;
 
-namespace EdiFileProcess.Models.EdiFacts.SegmentGroups {
+namespace EdiFileProcess.Models.EdiFact.Details {
     public class DateTimeOfPreparationDetails {
         [EdiValue("9(8)", Order = 4, Format = "yyyyMMdd")]
         public DateTime Date { get; set; }
