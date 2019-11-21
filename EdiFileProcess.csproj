@@ -54,6 +54,7 @@
     <Compile Include="Enums\EdiFactTypes.cs" />
     <Compile Include="Enums\EdiTypes.cs" />
     <Compile Include="Enums\PictureKind.cs" />
+    <Compile Include="Models\EdiFact\EdiFactDesadvModelBase.cs" />
     <Compile Include="Models\EdiFact\SegmentGroups\DetailTriggerSegment.cs" />
     <Compile Include="Models\EdiFact\SegmentGroups\LineItem.cs" />
     <Compile Include="Models\EdiFact\Segments\GINSegment.cs" />
@@ -87,7 +88,7 @@
     <Compile Include="Models\X12\Edi997\Transaction.cs" />
     <Compile Include="Models\X12\Edi997\FunctionalAcknowledgment.cs" />
     <Compile Include="Models\EdiFact\Desadv\DespatchAdvice.cs" />
-    <Compile Include="Models\EdiFact\EdiFactDesadvModel.cs" />
+    <Compile Include="Models\EdiFact\EdiFactModelBase.cs" />
     <Compile Include="Models\EdiFact\Details\DocumentMessageIdentificationDetails.cs" />
     <Compile Include="Models\EdiFact\Details\DocumentMessageNameDetails.cs" />
     <Compile Include="Models\EdiFact\Details\DateTimeOfPreparationDetails.cs" />

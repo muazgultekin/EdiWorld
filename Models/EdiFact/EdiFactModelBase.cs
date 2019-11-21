@@ -12,14 +12,8 @@ namespace EdiFileProcess.Models.EdiFact {
     /// DESADV - Dispatch advice message
     /// </summary>
     [EdiFact(EdiFactType = EdiFactTypes.DESADV)]
-    public class EdiFactDesadvModel {
-        [EdiSegment(Order = 0)]
-        public UNBSegment UNB { get; set; }
-        
+    public class EdiFactDesadvModel : EdiFactModelBase {       
         [EdiSegment(Path = "UNH", Order = 1, IsCollection = true, SequenceEnd = "UNT", IsWithSequenceEnd = true)]
-        public List<DespatchAdvice> DespatchAdvices { get; set; }
-
-        [EdiSegment(Order = 2)]
-        public UNZSegment UNZ { get; set; }
+        public List<DespatchAdvice> DespatchAdvices { get; set; }        
     }
 }

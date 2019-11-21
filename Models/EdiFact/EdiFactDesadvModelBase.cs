@@ -2,7 +2,7 @@
 using EdiFileProcess.Models.EdiFact.Segments;
 
 namespace EdiFileProcess.Models.EdiFact {
-    public abstract class EdiFactDesadvModelBase {
+    public abstract class EdiFactModelBase {
         [EdiSegment(Order = 0)]
         public UNBSegment UNB { get; set; }
 
