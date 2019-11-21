@@ -43,9 +43,9 @@
   <ItemGroup>
     <Compile Include="Attributes\EdiAttribute.cs" />
     <Compile Include="Attributes\EdiFactAttribute.cs" />
+    <Compile Include="Attributes\EdiOrderAttribute.cs" />
     <Compile Include="Attributes\EdiSegmentAttribute.cs" />
     <Compile Include="Attributes\EdiValueAttribute.cs" />
-    <Compile Include="DESADVDeserialize.cs" />
     <Compile Include="Edi850Deserialize.cs" />
     <Compile Include="EdiDeserialize.cs" />
     <Compile Include="EdiFactDeserialize.cs" />
