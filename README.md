@@ -54,7 +54,17 @@ public class Edi990Model : EdiModelBase
 	[EdiSegment(Path = "ST", Order = 2, IsCollection = true, SequenceEnd = "SE", IsWithSequenceEnd = true)]
 	public List<ResponseToLoadTender> ResponseToLoadTenders { get; set; }        
 }
+
+and
+
+[EdiFact(EdiFactType = EdiFactTypes.DESADV)]
+public class EdiFactDesadvModel : EdiFactDesadvModelBase {       
+	[EdiSegment(Path = "UNH", Order = 1, IsCollection = true, SequenceEnd = "UNT", IsWithSequenceEnd = true)]
+	public List<DespatchAdvice> DespatchAdvices { get; set; }        
+}
 ```
+
+
 
 After the 990 model is created, serializing and deserialize operation is handled easily.
 
@@ -66,4 +76,5 @@ Edi214 				| 2019-10-01   	| Yes           | Beta            |
 Edi850 				| 2019-10-01   	| Yes           | Beta            |
 Edi990 				| 2019-10-01   	| Yes           | Yes             | [carrier_990](https://ryder.com/-/media/ryder/ryder-global/carriers/carrier_990.pdf)
 Edi997 				| 2019-11-07   	| Yes           | Yes             | [edi-997-functional-acknowledgment](https://www2.rlcarriers.com/files/documents/edi-997-functional-acknowledgment.pdf)
-
+------------------- | ------------- | ------------- | --------------- | ---------------
+DESADV 				| 2019-11-27   	| No            | Yes             | [DESADV] https://multimedia.3m.com/mws/media/1056509O/3m-d96a-desadv-draft-edifact.pdf
