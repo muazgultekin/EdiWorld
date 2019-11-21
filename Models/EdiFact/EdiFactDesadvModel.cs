@@ -2,6 +2,7 @@
 /// https://www.faurecia.com/sites/groupe/files/paradocfournisseurs/faurecia_edi_guideline_desadv_d97a_v6r2.pdf
 
 using EdiFileProcess.Attributes;
+using EdiFileProcess.Enums;
 using EdiFileProcess.Models.EdiFact.Desadv;
 using EdiFileProcess.Models.EdiFact.Segments;
 using System.Collections.Generic;
@@ -10,6 +11,7 @@ namespace EdiFileProcess.Models.EdiFact {
     /// <summary>
     /// DESADV - Dispatch advice message
     /// </summary>
+    [EdiFact(EdiFactType = EdiFactTypes.DESADV)]
     public class EdiFactDesadvModel {
         [EdiSegment(Order = 0)]
         public UNBSegment UNB { get; set; }
@@ -18,6 +20,6 @@ namespace EdiFileProcess.Models.EdiFact {
         public List<DespatchAdvice> DespatchAdvices { get; set; }
 
         [EdiSegment(Order = 2)]
-        public UNZSegment IEA { get; set; }
+        public UNZSegment UNZ { get; set; }
     }
 }

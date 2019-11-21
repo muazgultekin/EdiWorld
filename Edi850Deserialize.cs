@@ -23,8 +23,8 @@ namespace EdiFileProcess {
 
         public static object DeserializeInternal(string[] readToEndLines, Type objectType) {
             object dataObject = Activator.CreateInstance(objectType);
-            readToEndLines = PropertyClass.IsNotGenericType(readToEndLines, dataObject);
-            readToEndLines = PropertyClass.IsGenericType(readToEndLines, dataObject);
+            readToEndLines = EdiPropertyClass.IsNotGenericType(readToEndLines, dataObject);
+            readToEndLines = EdiPropertyClass.IsGenericType(readToEndLines, dataObject);
             return dataObject;
         }
     }

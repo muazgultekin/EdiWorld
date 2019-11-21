@@ -6,7 +6,7 @@ using System.Linq;
 using System.Reflection;
 
 namespace EdiFileProcess.Utilities {
-    public class PropertyClass {
+    public class EdiPropertyClass {
         public static string[] IsNotGenericType(string[] readToEndLines, object dataObject) {
             Type dataObjectType = dataObject.GetType();
 
@@ -144,7 +144,7 @@ namespace EdiFileProcess.Utilities {
             EdiSegmentAttribute eEdiSegmentAttribute = (EdiSegmentAttribute)propertyType.GetCustomAttribute(typeof(EdiSegmentAttribute));
             foreach (string readToEndLine in ReadToEndLines) {
                 string[] parts = readToEndLine.Split('*');
-                string master = parts[0];
+                string master = parts[0];                
                 if (eEdiSegmentAttribute != null) {
                     if (eEdiSegmentAttribute.Path == master) {
                         object IsClassObject = Activator.CreateInstance(propertyType);

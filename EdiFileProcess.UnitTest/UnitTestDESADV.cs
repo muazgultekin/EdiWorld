@@ -1,15 +1,23 @@
-﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
+﻿using EdiFileProcess.Models.EdiFact;
+using Microsoft.VisualStudio.TestTools.UnitTesting;
+using System;
+using System.IO;
 
 namespace EdiFileProcess.UnitTest {
     [TestClass]
     public class UnitTestDESADV {
         [TestMethod]
         public void First() {
-            /*EdiFactDesadvModel objectType = null;
-            using (Stream fs = File.OpenRead("DESADV.edi")) {
-                objectType = new EdiDeserialize().Deserialize<EdiFactDesadvModel>(new StreamReader(fs));
+            try {
+                EdiFactDesadvModel objectType = null;
+                using (Stream stream = File.OpenRead("DESADV_02.edi")) {
+                    objectType = new EdiFactDeserialize().Deserialize<EdiFactDesadvModel>(new StreamReader(stream));
+                }
+                Assert.IsTrue(true);
             }
-            return objectType;*/
+            catch {
+                Assert.IsTrue(false);
+            }
         }
     }
 }

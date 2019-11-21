@@ -11,14 +11,17 @@ namespace EdiFileProcess.Models.EdiFact.Desadv {
 
         [EdiSegment(Order = 1)]
         public BGMSegment BGM { get; set; }
-
-        [EdiSegment(Order = 2)]
+        
+        [EdiSegment(Path = "DTM", Order = 2, IsCollection = true)]
         public List<DateTimePeriodDetail> DTMs  { get; set; }
 
-        [EdiSegment(Order = 3)]
+        [EdiSegment(Path = "NAD", Order = 3, IsCollection = true, SequenceEnd ="CPS")]
         public List<NADSegment> NADs { get; set; }
 
-        [EdiSegment(Order = 4)]
+        [EdiSegment(Path = "CPS", Order = 4, IsCollection = true, SequenceEnd = "UNT")]
         public List<DetailTriggerSegment> CPSs { get; set; }
+
+        [EdiSegment(Order = 5)]
+        public UNTSegment UNT { get; set; }
     }
 }

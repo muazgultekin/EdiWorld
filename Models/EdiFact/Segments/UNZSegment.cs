@@ -10,12 +10,14 @@ namespace EdiFileProcess.Models.EdiFact.Segments {
         /// Number of messages in an interchange. 
         /// </summary>
         [EdiValue("9(2)", Order = 0)]
+        [EdiOrder(Order = 0)]
         public int InterchangeControlCount { get; set; }
 
         /// <summary>
         /// Value must be the same as 0020-Interchange Control Reference in UNB.
         /// </summary>
         [EdiValue("X(20)", Order = 1)]
+        [EdiOrder(Order = 1)]
         public string InterchangeControlReference { get; set; }
     }
 }

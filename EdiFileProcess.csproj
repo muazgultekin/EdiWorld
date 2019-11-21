@@ -54,9 +54,11 @@
     <Compile Include="Enums\EdiFactTypes.cs" />
     <Compile Include="Enums\EdiTypes.cs" />
     <Compile Include="Enums\PictureKind.cs" />
-    <Compile Include="Models\EdiFact\Details\QuantityDetails.cs" />
     <Compile Include="Models\EdiFact\SegmentGroups\DetailTriggerSegment.cs" />
     <Compile Include="Models\EdiFact\SegmentGroups\LineItem.cs" />
+    <Compile Include="Models\EdiFact\Segments\GINSegment.cs" />
+    <Compile Include="Models\EdiFact\Segments\PCISegment.cs" />
+    <Compile Include="Models\EdiFact\Segments\QTYSegment.cs" />
     <Compile Include="Models\EdiFact\Segments\RFFSegment.cs" />
     <Compile Include="Models\X12\Edi204Model.cs" />
     <Compile Include="Models\X12\Edi204\MarksAndNumber.cs" />
@@ -164,7 +166,10 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Structs\Picture.cs" />
     <Compile Include="Utilities\EdiExtensions.cs" />
-    <Compile Include="Utilities\PropertyClass.cs" />
+    <Compile Include="Utilities\EdiFactIsGenericType.cs" />
+    <Compile Include="Utilities\EdiFactIsNotGenericType.cs" />
+    <Compile Include="Utilities\EdiFactPropertyClass.cs" />
+    <Compile Include="Utilities\EdiPropertyClass.cs" />
     <Compile Include="Utilities\PropertyInfoClass.cs" />
   </ItemGroup>
   <ItemGroup />

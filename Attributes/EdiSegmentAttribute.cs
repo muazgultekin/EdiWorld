@@ -11,4 +11,9 @@ namespace EdiFileProcess.Attributes
         public string SequenceEnd { get; set; }
         public bool IsWithSequenceEnd { get; set; }
     }
+
+    [AttributeUsage(AttributeTargets.Property | AttributeTargets.Class | AttributeTargets.Field, Inherited = true, AllowMultiple = false)]
+    public class EdiOrderAttribute : Attribute {       
+        public int Order { get; set; }        
+    }
 }
