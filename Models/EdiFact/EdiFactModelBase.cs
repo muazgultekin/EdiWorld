@@ -4,7 +4,6 @@
 using EdiFileProcess.Attributes;
 using EdiFileProcess.Enums;
 using EdiFileProcess.Models.EdiFact.Desadv;
-using EdiFileProcess.Models.EdiFact.Segments;
 using System.Collections.Generic;
 
 namespace EdiFileProcess.Models.EdiFact {

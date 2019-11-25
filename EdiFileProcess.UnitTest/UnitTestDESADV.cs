@@ -1,6 +1,5 @@
 ﻿using EdiFileProcess.Models.EdiFact;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
-using System;
 using System.IO;
 
 namespace EdiFileProcess.UnitTest {

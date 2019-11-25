@@ -7,6 +7,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EdiFileProcess", "EdiFilePr
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EdiFileProcess.UnitTest", "EdiFileProcess.UnitTest\EdiFileProcess.UnitTest.csproj", "{A6224A85-A58C-4F6E-881E-9CDA2B8C3566}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EdiFileProcess.Rev01", "EdiFileProcess.Rev01\EdiFileProcess.Rev01.csproj", "{74DCB134-C16D-435E-A606-22FFBB2BEDA8}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EdiFileProcess.Rev01.UnitTest", "..\EdiFileProcess.Rev01.UnitTest\EdiFileProcess.Rev01.UnitTest.csproj", "{6EE07286-B0EA-491F-9457-377FAB9EE5B4}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -21,6 +25,14 @@ Global
 		{A6224A85-A58C-4F6E-881E-9CDA2B8C3566}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{A6224A85-A58C-4F6E-881E-9CDA2B8C3566}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{A6224A85-A58C-4F6E-881E-9CDA2B8C3566}.Release|Any CPU.Build.0 = Release|Any CPU
+		{74DCB134-C16D-435E-A606-22FFBB2BEDA8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{74DCB134-C16D-435E-A606-22FFBB2BEDA8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{74DCB134-C16D-435E-A606-22FFBB2BEDA8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{74DCB134-C16D-435E-A606-22FFBB2BEDA8}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6EE07286-B0EA-491F-9457-377FAB9EE5B4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6EE07286-B0EA-491F-9457-377FAB9EE5B4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6EE07286-B0EA-491F-9457-377FAB9EE5B4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6EE07286-B0EA-491F-9457-377FAB9EE5B4}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

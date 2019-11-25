@@ -110,7 +110,7 @@ namespace EdiFileProcess.UnitTest {
 
             // IEA test complited
             Assert.AreEqual(serializer.IEA.NumberOfIncludedFunctionalGroups, deserializer.IEA.NumberOfIncludedFunctionalGroups);
-            Assert.AreEqual(serializer.IEA.QuantityInterchangeControlNumber, deserializer.IEA.QuantityInterchangeControlNumber);
+            Assert.AreEqual(serializer.IEA.QuantityInterchangeControlNumber, deserializer.IEA.QuantityInterchangeControlNumber);            
         }
 
         [TestMethod]
