@@ -1,4 +1,5 @@
 ﻿using EdiFileProcess.Rev01.Attributes;
+using EdiFileProcess.Rev01.Models.Hanmov.SegmentGroups;
 using EdiFileProcess.Rev01.Segments.EdiFact;
 using System.Collections.Generic;
 
@@ -12,5 +13,17 @@ namespace EdiFileProcess.Rev01.Models.Hanmov {
 
         [EdiSegment(Order = 2)]
         public List<DTMSegment> DTMs { get; set; }
+
+        [EdiSegment(Order = 3)]        
+        public List<SegmentGroup02> SegmentGroup02s { get; set; }
+
+        [EdiSegment(Order = 4)]
+        public List<SegmentGroup03> SegmentGroup03s { get; set; }
+
+        [EdiSegment(Order = 5)]
+        public List<SegmentGroup07> SegmentGroup07s { get; set; }
+
+        [EdiSegment(Order = 6)]
+        public UNTSegment UNT { get; set; }
     }
 }

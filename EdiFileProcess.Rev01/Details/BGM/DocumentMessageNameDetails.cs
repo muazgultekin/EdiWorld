@@ -1,6 +1,6 @@
 ﻿using EdiFileProcess.Rev01.Attributes;
 
-namespace EdiFileProcess.Rev01.Details {
+namespace EdiFileProcess.Rev01.Details.BGM {
     public class DocumentMessageNameDetails {
         [EdiOrder(Order = 0)]
         public string DocumentMessageNameC002 { get; set; }

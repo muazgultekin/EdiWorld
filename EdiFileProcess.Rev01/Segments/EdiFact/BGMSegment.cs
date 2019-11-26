@@ -1,5 +1,5 @@
 ﻿using EdiFileProcess.Rev01.Attributes;
-using EdiFileProcess.Rev01.Details;
+using EdiFileProcess.Rev01.Details.BGM;
 
 namespace EdiFileProcess.Rev01.Segments.EdiFact {
     [EdiSegment(Path = "BGM")]
@@ -12,5 +12,15 @@ namespace EdiFileProcess.Rev01.Segments.EdiFact {
         public string MessageFunctionCoded { get; set; }
         [EdiOrder(Order = 3)]
         public string ResponseTypeCoded { get; set; }
+    }
+
+    [EdiSegment(Path = "UNT")]
+    public class UNTSegment {
+        [EdiOrder(Order = 0)]
+        public string NumberOfSegmentsInAMessage { get; set; }
+
+        [EdiOrder(Order = 1)]
+        public string MessageReferenceNumber { get; set; }
+
     }
 }

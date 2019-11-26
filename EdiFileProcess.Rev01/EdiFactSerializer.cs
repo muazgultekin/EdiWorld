@@ -8,7 +8,7 @@ using System.Linq;
 using System.Reflection;
 
 namespace EdiFileProcess.Rev01 {
-    public class EdiFactSerializer {        
+    public class EdiFactSerializer {
         public void Serialize(StreamWriter streamWriter, object objectType) {
             EdiFactAttribute ediFactAttribute = (EdiFactAttribute)objectType.GetType().GetCustomAttribute(typeof(EdiFactAttribute));
             switch (ediFactAttribute.EdiFactType) {
@@ -16,7 +16,7 @@ namespace EdiFileProcess.Rev01 {
                     Write(streamWriter, objectType);
                     break;
                 default:
-                    throw new Exception($"{ediFactAttribute.EdiFactType} Model is not designed.");                    
+                    throw new Exception($"{ediFactAttribute.EdiFactType} Model is not designed.");
             }
         }
 
@@ -26,7 +26,7 @@ namespace EdiFileProcess.Rev01 {
         }
 
         private string WriteObjectType(StreamWriter streamWriter, object objectType, string separate) {
-            string result = string.Empty;
+            string result = string.Empty;            
             PropertyInfo[] propertyInfos = GetPropertyInfos(objectType, typeof(EdiSegmentAttribute));
             if (propertyInfos.Length > 0) {
                 result = string.Empty;
@@ -35,10 +35,15 @@ namespace EdiFileProcess.Rev01 {
                         object values = propertyInfo.GetValue(objectType);
                         if (values != null) {
                             EdiSegmentAttribute propertyTypeAttribute = (EdiSegmentAttribute)propertyInfo.PropertyType.GetCustomAttribute(typeof(EdiSegmentAttribute));
-                            result += propertyTypeAttribute.Path + "+" + WriteObjectType(streamWriter, values, separate);
-                            result = result.Substring(0, result.Length - 1) + "'";
-                            streamWriter.WriteLine(result);
-                            result = string.Empty;
+                            if (propertyTypeAttribute != null) {
+                                result += propertyTypeAttribute.Path + "+" + WriteObjectType(streamWriter, values, separate);
+                                result = result.Substring(0, result.Length - 1) + "'";
+                                streamWriter.WriteLine(result);
+                                result = string.Empty;
+                            }
+                            else {
+                                result = WriteObjectType(streamWriter, propertyInfo, separate);                                
+                            }
                         }
                     }
                     else {
@@ -46,15 +51,15 @@ namespace EdiFileProcess.Rev01 {
                         if (values == null) continue;
                         for (int i = 0; i < values.Count; i++) {
                             EdiSegmentAttribute propertyTypeAttribute = (EdiSegmentAttribute)values[i].GetType().GetCustomAttribute(typeof(EdiSegmentAttribute));
-                            if (propertyTypeAttribute == null)
+                            if (propertyTypeAttribute == null) {                                
                                 result = WriteObjectType(streamWriter, values[i], separate);
+                            }
                             else {
                                 result += propertyTypeAttribute.Path + "+" + WriteObjectType(streamWriter, values[i], separate);
                                 result = result.Substring(0, result.Length - 1) + "'";
                                 streamWriter.WriteLine(result);
                                 result = string.Empty;
                             }
-
                         }
                     }
                 }

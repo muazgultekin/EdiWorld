@@ -1,8 +1,7 @@
-﻿
-using EdiFileProcess.Rev01.Attributes;
+﻿using EdiFileProcess.Rev01.Attributes;
 
 namespace EdiFileProcess.Rev01.Details {
-    public class SyntaxIdentifierDetails {       
+    public class SyntaxIdentifierDetails {
         [EdiOrder(Order = 0)]
         public string SyntaxIdentifier { get; set; }        
         [EdiOrder(Order = 1)]
