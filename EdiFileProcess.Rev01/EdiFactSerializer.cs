@@ -21,7 +21,7 @@ namespace EdiFileProcess.Rev01 {
         }
 
         public void Write(StreamWriter streamWriter, object objectType) {
-            streamWriter.WriteLine("UNA:+.? ");
+            streamWriter.WriteLine("UNA:+.? '");
             WriteObjectType(streamWriter, objectType, "+");
         }
 
@@ -42,7 +42,7 @@ namespace EdiFileProcess.Rev01 {
                                 result = string.Empty;
                             }
                             else {
-                                result = WriteObjectType(streamWriter, propertyInfo, separate);                                
+                                throw new Exception($"The model {propertyInfo.Name} is incorrect.");
                             }
                         }
                     }

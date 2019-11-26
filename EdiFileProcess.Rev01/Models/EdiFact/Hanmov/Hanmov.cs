@@ -1,9 +1,9 @@
 ﻿using EdiFileProcess.Rev01.Attributes;
-using EdiFileProcess.Rev01.Models.Hanmov.SegmentGroups;
+using EdiFileProcess.Rev01.Models.EdiFact.Hanmov.SegmentGroups;
 using EdiFileProcess.Rev01.Segments.EdiFact;
 using System.Collections.Generic;
 
-namespace EdiFileProcess.Rev01.Models.Hanmov {
+namespace EdiFileProcess.Rev01.Models.EdiFact.Hanmov {
     public class HanmovClass {
         [EdiSegment(Order = 0)]
         public UNHSegment UNH { get; set; }
