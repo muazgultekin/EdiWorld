@@ -2,7 +2,7 @@
 using EdiFileProcess.Rev01.Segments.EdiFact;
 using System.Collections.Generic;
 
-namespace EdiFileProcess.Rev01.Models.Hanmov.SegmentGroups {
+namespace EdiFileProcess.Rev01.Models.EdiFact.Hanmov.SegmentGroups {
     public class SegmentGroup03 {
         [EdiSegment(Order = 0)]
         public NADSegment NAD { get; set; }

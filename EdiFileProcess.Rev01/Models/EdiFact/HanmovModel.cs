@@ -7,11 +7,11 @@
 
 using EdiFileProcess.Rev01.Attributes;
 using EdiFileProcess.Rev01.Enums;
-using EdiFileProcess.Rev01.Models.Base;
-using EdiFileProcess.Rev01.Models.Hanmov;
+using EdiFileProcess.Rev01.Models.EdiFact.Base;
+using EdiFileProcess.Rev01.Models.EdiFact.Hanmov;
 using System.Collections.Generic;
 
-namespace EdiFileProcess.Rev01.Models {
+namespace EdiFileProcess.Rev01.Models.EdiFact {
     [EdiFact(EdiFactType = EdiFactTypes.HANMOV)]
     public class HanmovModel : EdiFactModelBase {
         [EdiSegment(Order = 0)]
