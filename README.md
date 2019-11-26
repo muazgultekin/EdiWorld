@@ -62,6 +62,14 @@ public class EdiFactDesadvModel : EdiFactModelBase {
 	[EdiSegment(Path = "UNH", Order = 1, IsCollection = true, SequenceEnd = "UNT", IsWithSequenceEnd = true)]
 	public List<DespatchAdvice> DespatchAdvices { get; set; }        
 }
+
+/// New Architect
+[EdiFact(EdiFactType = EdiFactTypes.HANMOV)]
+public class HanmovModel : EdiFactModelBase {
+	[EdiSegment(Order = 0)]
+	public List<HanmovClass> Hanmovs { get; set; }
+}
+
 ```
 
 
