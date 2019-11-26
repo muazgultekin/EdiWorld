@@ -76,4 +76,5 @@ Edi214 				| 2019-10-01   	| Yes           | Beta            |
 Edi850 				| 2019-10-01   	| Yes           | Beta            |
 Edi990 				| 2019-10-01   	| Yes           | Yes             | [carrier_990](https://ryder.com/-/media/ryder/ryder-global/carriers/carrier_990.pdf)
 Edi997 				| 2019-11-07   	| Yes           | Yes             | [edi-997-functional-acknowledgment](https://www2.rlcarriers.com/files/documents/edi-997-functional-acknowledgment.pdf)
-DESADV 				| 2019-11-27   	| No            | Yes             | [DESADV](https://multimedia.3m.com/mws/media/1056509O/3m-d96a-desadv-draft-edifact.pdf)
+DESADV 				| 2019-11-27   	| Yes           | Yes             | [DESADV](https://multimedia.3m.com/mws/media/1056509O/3m-d96a-desadv-draft-edifact.pdf)
+HANMOV 				| 2019-11-27   	| Yes           | Yes             | [HANMOV](https://www.stylusstudio.com/edifact/D96A/HANMOV.htm)
