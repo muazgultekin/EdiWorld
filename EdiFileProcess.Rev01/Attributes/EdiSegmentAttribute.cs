@@ -8,9 +8,6 @@ namespace EdiFileProcess.Rev01.Attributes {
         public bool IsCollection { get; set; }
         public string SequenceEnd { get; set; }
         public bool IsWithSequenceEnd { get; set; }
-    }
-
-    [AttributeUsage(AttributeTargets.Property | AttributeTargets.Class | AttributeTargets.Field, Inherited = true, AllowMultiple = false)]
-    public class EdiSegmentGroupAttribute : EdiSegmentAttribute {        
+        public bool IsLoop { get; set; }
     }
 }

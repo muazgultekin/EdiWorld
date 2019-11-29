@@ -44,6 +44,7 @@
     <Compile Include="Attributes\EdiFactAttribute.cs" />
     <Compile Include="Attributes\EdiOrderAttribute.cs" />
     <Compile Include="Attributes\EdiSegmentAttribute.cs" />
+    <Compile Include="Attributes\EdiSegmentGroupAttribute.cs" />
     <Compile Include="Details\DateTimeOfPreparationDetails.cs" />
     <Compile Include="Details\DateTimePeriodDetail.cs" />
     <Compile Include="Details\DocumentMessageIdentificationDetails.cs" />
@@ -86,6 +87,7 @@
     <Compile Include="Segments\EdiFact\UNBSegment.cs" />
     <Compile Include="Segments\EdiFact\UNHSegment.cs" />
     <Compile Include="Segments\EdiFact\UNZSegment.cs" />
+    <Compile Include="Utilities\PropertyClass.cs" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Segments\X12\" />

@@ -19,7 +19,7 @@ namespace EdiFileProcess {
             if (ediAttribute == null)
                 throw new Exception("Deserialize edilecek obje Modeli hangi Edi dosyası için işlem tyapılacağı tanımlanmamış!");
             switch (ediAttribute.EdiFactType) {
-                case EdiFileProcess.Enums.EdiFactTypes.DESADV:
+                case Enums.EdiFactTypes.DESADV:
                     return DeserializeInternal(ReadToEndLines, objectType);
                 default:
                     throw new Exception("EdiFactTypes are defined.");

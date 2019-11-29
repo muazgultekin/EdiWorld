@@ -2,7 +2,7 @@
 using EdiFileProcess.Rev01.Details;
 
 namespace EdiFileProcess.Rev01.Segments.EdiFact {
-    [EdiSegment(Path = "UNH")]
+    [EdiSegment(Path = "UNH", IsLoop = true)]
     public class UNHSegment {
         [EdiOrder(Order = 0)]
         public string MessageReferenceNumber { get; set; }

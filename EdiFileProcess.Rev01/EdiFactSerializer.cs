@@ -1,5 +1,6 @@
 ﻿using EdiFileProcess.Rev01.Attributes;
 using EdiFileProcess.Rev01.Enums;
+using EdiFileProcess.Rev01.Utilities;
 using System;
 using System.Collections;
 using System.Collections.Generic;
@@ -26,8 +27,8 @@ namespace EdiFileProcess.Rev01 {
         }
 
         private string WriteObjectType(StreamWriter streamWriter, object objectType, string separate) {
-            string result = string.Empty;            
-            PropertyInfo[] propertyInfos = GetPropertyInfos(objectType, typeof(EdiSegmentAttribute));
+            string result = string.Empty;
+            PropertyInfo[] propertyInfos = PropertyClass.GetPropertyInfos(objectType.GetType().GetProperties(), typeof(EdiSegmentAttribute));
             if (propertyInfos.Length > 0) {
                 result = string.Empty;
                 foreach (PropertyInfo propertyInfo in propertyInfos.OrderBy(p => p.GetCustomAttributes().OfType<EdiSegmentAttribute>().First().Order).ToArray()) {
@@ -51,7 +52,7 @@ namespace EdiFileProcess.Rev01 {
                         if (values == null) continue;
                         for (int i = 0; i < values.Count; i++) {
                             EdiSegmentAttribute propertyTypeAttribute = (EdiSegmentAttribute)values[i].GetType().GetCustomAttribute(typeof(EdiSegmentAttribute));
-                            if (propertyTypeAttribute == null) {                                
+                            if (propertyTypeAttribute == null) {
                                 result = WriteObjectType(streamWriter, values[i], separate);
                             }
                             else {
@@ -65,17 +66,14 @@ namespace EdiFileProcess.Rev01 {
                 }
             }
 
-            propertyInfos = GetPropertyInfos(objectType, typeof(EdiOrderAttribute));
+            propertyInfos = PropertyClass.GetPropertyInfos(objectType.GetType().GetProperties(), typeof(EdiOrderAttribute));
             if (propertyInfos.Length > 0) {
                 foreach (PropertyInfo propertyInfo in propertyInfos.OrderBy(p => p.GetCustomAttributes().OfType<EdiOrderAttribute>().First().Order).ToArray()) {
                     EdiOrderAttribute ediOrderAttribute = (EdiOrderAttribute)propertyInfo.GetCustomAttribute(typeof(EdiOrderAttribute));
                     if (ediOrderAttribute.IsDetail) {
                         object values = propertyInfo.GetValue(objectType);
                         if (values != null) {
-                            if (result == string.Empty)
-                                result += WriteObjectType(streamWriter, values, ":") + "+";
-                            else
-                                result += WriteObjectType(streamWriter, values, ":") + "+";
+                            result += WriteObjectType(streamWriter, values, ":") + "+";
                         }
                     }
                     else {
@@ -114,17 +112,6 @@ namespace EdiFileProcess.Rev01 {
             }
             else
                 return result;
-        }
-
-        private PropertyInfo[] GetPropertyInfos(object objectType, Type attributeType) {
-            List<PropertyInfo> propertyInfoArray = new List<PropertyInfo>();
-            PropertyInfo[] propertyInfos = objectType.GetType().GetProperties();
-            foreach (PropertyInfo propertyInfo in propertyInfos) {
-                Attribute attribute = propertyInfo.GetCustomAttribute(attributeType);
-                if (attribute == null) continue;
-                propertyInfoArray.Add(propertyInfo);
-            }
-            return propertyInfoArray.ToArray();
-        }
+        }        
     }
 }
